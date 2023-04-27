@@ -1,11 +1,17 @@
 <?php
 // Use the Console / Terminal for this exercise! 
-$number = 27;
-$guess = readline( 'Guess between 1 and 30: ');
-if ( $number == $guess ) {
-  echo "Yes! You guessed correctly. \n\n";
-} else {
-  echo "Alas. Your guess is incorrect. \n\n";
+$number = rand(1, 30); //that's inclusive
+$guess = null;
+echo $number . "\n\n";
+
+while ($guess != $number) {
+  $guess = readline('Adivinhe um número entre 1 e 30: ');
+
+  if ($number == $guess) {
+    echo "Acertou! Parabéns!. \n\n";
+  } else {
+    echo "Número errado, tente novamente. \n\n";
+  }
 }
 
 die();
